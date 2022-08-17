@@ -1,0 +1,44 @@
+<div class="col-12 col-lg-4 mb-3 mb-lg-0">
+    <!-- Navigation -->
+    <div class="card border-gray-300 p-2">
+        <div class="card-header bg-white border-0 text-center d-flex flex-row flex-lg-column align-items-center justify-content-center px-1 px-lg-4">
+            <div class="profile-thumbnail dashboard-avatar mx-lg-auto me-3">
+                <img src="{{ user.avatar.thumbnail__200x200 }}"
+                     class="card-img-top rounded-circle border-white" alt="Bonnie Green Portrait">
+            </div>
+            <span class="h5 my-0 my-lg-3 me-3 me-lg-0">Hi, {{ user.vendor.business_name }}!</span>
+            <a href="{% url 'accounts:logout' %}" class="btn btn-gray-300 btn-xs"><span
+                    class="me-2"><span
+                    class="fas fa-sign-out-alt"></span></span>Sign Out</a>
+        </div>
+        <div class="card-body p-2 d-none d-lg-block">
+            <ul class="list-group dashboard-menu list-group-sm">
+                <a href="{% url 'vendors:vendors-home' %}"
+                   class="d-flex list-group-item border-0 list-group-item-action  active ">Overview
+                    <span class="icon icon-xs ms-auto"><span class="fas fa-briefcase"></span></span>
+                </a>
+                <a href="{% url 'vendors:vendors-catalog' %}"
+                   class="d-flex list-group-item border-0 list-group-item-action ">Catalog<span
+                        class="icon icon-xs ms-auto"><span class="fas fa-shopping-bag"></span></span>
+                </a>
+                <a href="/dashboard-my-items.html"
+                   class="d-flex list-group-item border-0 list-group-item-action ">Orders<span
+                        class="icon icon-xs ms-auto"><span class="fas fa-shopping-cart"></span></span>
+                </a>
+                <a href="/dashboard-security.html"
+                   class="d-flex list-group-item border-0 list-group-item-action ">Customers<span
+                        class="icon icon-xs ms-auto"><span class="fas fa-user"></span></span>
+                </a>
+                <a href="/dashboard-billing.html"
+                   class="d-flex list-group-item border-0 list-group-item-action ">Discounts<span
+                        class="icon icon-xs ms-auto"><span class="fas fa-wallet"></span></span>
+                </a>
+                <a href="{% url 'vendors:vendors-update' user.pk uuid %}"
+                   class="d-flex list-group-item border-0 list-group-item-action  border-0">Settings<span
+                        class="icon icon-xs ms-auto"><span class="fas fa-tools"></span></span>
+                </a>
+            </ul>
+        </div>
+    </div>
+</div>
+
